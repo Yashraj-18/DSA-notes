@@ -32,3 +32,9 @@ int lower_bound(vector<int>& nums , int target){
       return ans; 
     }
 };
+
+/* For a vector nums = [5, 7, 7, 8, 8, 10] and target = 8:
+
+ind1 = lower_bound(nums, 8) will return the index of the first 8.
+ind2 = lower_bound(nums, 9) - 1 will return the index of the last 8.
+searchRange will return [3, 4] */
