@@ -5,6 +5,14 @@ public:
         int ans = INT_MAX;
         while( low <= high ){
             int mid = (low+high)/2;
+         //search space is already sorted
+        //then arr[low] will always be
+        //the minimum in that search space:
+        if (nums[low] <= nums[high]) {
+            ans = min(ans, nums[low]);
+            break;
+        }
+
             if(nums[low] <= nums[mid]){
                 // inside left sorted array , nums[low] will be the min element
                 ans = min(ans, nums[low]);
