@@ -1,12 +1,32 @@
 class Solution {
 public:
     bool rotateString(string s, string goal) {
-        int i = 0 , n = s.size();
-        while(i < n){
-            s = s.substr(1) + s[0];
-            if(s == goal) return true;
-            i++;
+        if (s.size() != goal.size()) {
+            return false;
         }
-        return false;
+
+        // Concatenate s to itself to create all possible rotations
+        string newString = s + s;
+
+        // Check if goal is a substring of newString
+        return newString.find(goal) != string::npos;
     }
 };
+// method 2
+// class Solution {
+// public:
+//     bool rotateString(string s, string goal) {
+        
+//         int len=s.length();
+//         for(int i=0;i<len;i++)
+//         {
+//             s+=s[i];
+//             string sub=s.substr(i+1,len+1);
+//             if(sub==goal)
+//             {
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+// };
